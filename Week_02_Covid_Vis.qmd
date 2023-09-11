@@ -21,9 +21,8 @@ Try using the different data sets and see which ones are good for making which p
 
 
 ```{r first_plot}
-ggplot(covid_data_orig, aes(x = Cases_Black, y = Deaths_Black)) + geom_point()
+ggplot(covid_data_orig, aes(x = State, y = Deaths_Black)) + geom_point()
 ```
-
 
 
 If you want to only look at a specific state, you can do it like this.
@@ -31,11 +30,22 @@ For now, see what you can do just using `ggplot`.
 
 ```{r}
 covid_data_count |> 
-  filter(state == "MA") |> 
+  filter(state == "CA") |> 
   ggplot(aes(x = date, y = Cases, color = race)) + geom_line()
 ```
 
 1. Write code for a plot and describe what you observe?
+
+It is a little hard to see and I couldn't figure out a way to plot the 50 states against Deaths_Black clearer, but a clear spike can be seen in Deaths_Black in 1 state. It is hard to read the name of the state since the names are all on top of each other.
+
 2. Are there any conclusions you can draw?
+
+In California, from April to January, a case spike has been seen in overall cases. Specifically during the month of January, there is a significant spike in cases in Latinx population compared to other populations in California.
+
 3. What were you not able to do due to not having the R knowledge?
-4. What other data would be useful to better understand this data? - Gender
+
+For the first plot, I wanted to average Deaths_Total for each month and then plot that against each state.
+
+4. What other data would be useful to better understand this data?
+
+Gender data might have been a useful addition to understand COVID affected any gender differently in each state or during a specific month period. 

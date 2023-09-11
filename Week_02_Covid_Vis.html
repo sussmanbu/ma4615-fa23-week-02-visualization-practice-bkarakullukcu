@@ -132,9 +132,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>I’ve include 4 different data sets. They all have the same data but have it represented in different ways. Try using the different data sets and see which ones are good for making which plots.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(covid_data_orig, <span class="fu">aes</span>(<span class="at">x =</span> Cases_Black, <span class="at">y =</span> Deaths_Black)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(covid_data_orig, <span class="fu">aes</span>(<span class="at">x =</span> State, <span class="at">y =</span> Deaths_Black)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 1111 rows containing missing values (`geom_point()`).</code></pre>
+<pre><code>Warning: Removed 975 rows containing missing values (`geom_point()`).</code></pre>
 </div>
 <div class="cell-output-display">
 <p><img src="Week_02_Covid_Vis_files/figure-html/first_plot-1.png" class="img-fluid" width="672"></p>
@@ -143,7 +143,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>If you want to only look at a specific state, you can do it like this. For now, see what you can do just using <code>ggplot</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>covid_data_count <span class="sc">|&gt;</span> </span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(state <span class="sc">==</span> <span class="st">"MA"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(state <span class="sc">==</span> <span class="st">"CA"</span>) <span class="sc">|&gt;</span> </span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> Cases, <span class="at">color =</span> race)) <span class="sc">+</span> <span class="fu">geom_line</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="Week_02_Covid_Vis_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
@@ -151,10 +151,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <ol type="1">
 <li>Write code for a plot and describe what you observe?</li>
-<li>Are there any conclusions you can draw?</li>
-<li>What were you not able to do due to not having the R knowledge?</li>
-<li>What other data would be useful to better understand this data? - Gender</li>
 </ol>
+<p>It is a little hard to see and I couldn’t figure out a way to plot the 50 states against Deaths_Black clearer, but a clear spike can be seen in Deaths_Black in 1 state. It is hard to read the name of the state since the names are all on top of each other.</p>
+<ol start="2" type="1">
+<li>Are there any conclusions you can draw?</li>
+</ol>
+<p>In California, from April to January, a case spike has been seen in overall cases. Specifically during the month of January, there is a significant spike in cases in Latinx population compared to other populations in California.</p>
+<ol start="3" type="1">
+<li>What were you not able to do due to not having the R knowledge?</li>
+</ol>
+<p>For the first plot, I wanted to average Deaths_Total for each month and then plot that against each state.</p>
+<ol start="4" type="1">
+<li>What other data would be useful to better understand this data?</li>
+</ol>
+<p>Gender data might have been a useful addition to understand COVID affected any gender differently in each state or during a specific month period.</p>
 
 </main>
 <!-- /main column -->
