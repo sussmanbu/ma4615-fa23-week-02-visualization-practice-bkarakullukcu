@@ -1,7 +1,7 @@
 ---
 title: "Week 02: COVID Visualization Activity"
 date: "September, 11 2023"
-author: "**`[[`**Your Name**`]]`**"
+author: "Belen Karakullukcu"
 ---
 
 Today, we'll be working with a data set related to COVID.
@@ -21,7 +21,7 @@ Try using the different data sets and see which ones are good for making which p
 
 
 ```{r first_plot}
-ggplot(covid_data_count, aes(x = date, y = Cases)) + geom_point()
+ggplot(covid_data_orig, aes(x = Cases_Black, y = Deaths_Black)) + geom_point()
 ```
 
 
@@ -38,4 +38,4 @@ covid_data_count |>
 1. Write code for a plot and describe what you observe?
 2. Are there any conclusions you can draw?
 3. What were you not able to do due to not having the R knowledge?
-4. What other data would be useful to better understand this data?
+4. What other data would be useful to better understand this data? - Gender
