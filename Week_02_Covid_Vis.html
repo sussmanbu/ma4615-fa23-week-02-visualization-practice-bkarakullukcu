@@ -132,7 +132,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>I’ve include 4 different data sets. They all have the same data but have it represented in different ways. Try using the different data sets and see which ones are good for making which plots.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(covid_data_orig, <span class="fu">aes</span>(<span class="at">x =</span> State, <span class="at">y =</span> Deaths_Black)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(covid_data_orig, <span class="fu">aes</span>(<span class="at">x =</span> State, <span class="at">y =</span> Deaths_Black)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">scale_x_discrete</span>(<span class="at">guide =</span> <span class="fu">guide_axis</span>(<span class="at">angle =</span> <span class="dv">30</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: Removed 975 rows containing missing values (`geom_point()`).</code></pre>
 </div>
@@ -152,7 +152,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol type="1">
 <li>Write code for a plot and describe what you observe?</li>
 </ol>
-<p>It is a little hard to see and I couldn’t figure out a way to plot the 50 states against Deaths_Black clearer, but a clear spike can be seen in Deaths_Black in 1 state. It is hard to read the name of the state since the names are all on top of each other.</p>
+<p>It is a little hard to see, but in New York, there is a clear spike in deaths caused by Covid in Black population compared to other states. It is a little hard to read the state labels since they are on top of each other, but I couldn’t make the gaps between them bigger.</p>
 <ol start="2" type="1">
 <li>Are there any conclusions you can draw?</li>
 </ol>

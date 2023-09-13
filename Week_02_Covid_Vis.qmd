@@ -21,7 +21,7 @@ Try using the different data sets and see which ones are good for making which p
 
 
 ```{r first_plot}
-ggplot(covid_data_orig, aes(x = State, y = Deaths_Black)) + geom_point()
+ggplot(covid_data_orig, aes(x = State, y = Deaths_Black)) + geom_point() + scale_x_discrete(guide = guide_axis(angle = 30))
 ```
 
 
@@ -36,7 +36,7 @@ covid_data_count |>
 
 1. Write code for a plot and describe what you observe?
 
-It is a little hard to see and I couldn't figure out a way to plot the 50 states against Deaths_Black clearer, but a clear spike can be seen in Deaths_Black in 1 state. It is hard to read the name of the state since the names are all on top of each other.
+It is a little hard to see, but in New York, there is a clear spike in deaths caused by Covid in Black population compared to other states. It is a little hard to read the state labels since they are on top of each other, but I couldn't make the gaps between them bigger.
 
 2. Are there any conclusions you can draw?
 
